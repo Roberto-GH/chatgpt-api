@@ -1,0 +1,33 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.9'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+tasks.named('compileJava') {
+	inputs.files(tasks.named('processResources'))
+}
+
+group = 'com.rln'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.7.9'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.7.9'
+
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
