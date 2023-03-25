@@ -16,7 +16,6 @@ public class ChatgptProperties {
   public String getApiKey() {
     return apiKey;
   }
-
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }
@@ -24,7 +23,6 @@ public class ChatgptProperties {
   public String getModel() {
     return model;
   }
-
   public void setModel(String model) {
     this.model = model;
   }
@@ -32,7 +30,6 @@ public class ChatgptProperties {
   public Integer getMaxTokens() {
     return maxTokens;
   }
-
   public void setMaxTokens(Integer maxTokens) {
     this.maxTokens = maxTokens;
   }
@@ -40,7 +37,6 @@ public class ChatgptProperties {
   public Double getTemperature() {
     return temperature;
   }
-
   public void setTemperature(Double temperature) {
     this.temperature = temperature;
   }
@@ -48,7 +44,6 @@ public class ChatgptProperties {
   public Double getTopP() {
     return topP;
   }
-
   public void setTopP(Double topP) {
     this.topP = topP;
   }

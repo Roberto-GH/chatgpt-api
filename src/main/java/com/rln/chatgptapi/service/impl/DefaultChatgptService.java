@@ -39,7 +39,7 @@ public class DefaultChatgptService implements ChatgptService {
     try {
       return chatResponse.getChoices().get(0).getText();
     } catch (Exception e) {
-      log.error("parse chatgpt message error", e);
+      log.error("Parse chatgpt message error", e);
       throw e;
     }
   }
@@ -67,13 +67,13 @@ public class DefaultChatgptService implements ChatgptService {
   }
 
   public ChatResponse getResponse(HttpEntity<ChatRequest> chatRequestHttpEntity) {
-    log.info("request url: {}, httpEntity: {}", URL, chatRequestHttpEntity);
+    log.info("Request url: {}, httpEntity: {}", URL, chatRequestHttpEntity);
     ResponseEntity<ChatResponse> responseEntity = restTemplate.postForEntity(URL, chatRequestHttpEntity, ChatResponse.class);
     if (responseEntity.getStatusCode().isError()) {
-      log.error("error response status: {}", responseEntity);
-      throw new ChatgptException("error response status :" + responseEntity.getStatusCode().value());
+      log.error("Error response status: {}", responseEntity);
+      throw new ChatgptException("Error response status :" + responseEntity.getStatusCode().value());
     } else {
-      log.info("response: {}", responseEntity);
+      log.info("Response: {}", responseEntity);
     }
     return responseEntity.getBody();
   }

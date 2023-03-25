@@ -10,3 +10,4 @@ chatgpt:
   security:
     user-name: ${GPT_USER_NAME}
     password: ${GPT_PASSWORD}
+    origin: ${ORIGIN}
