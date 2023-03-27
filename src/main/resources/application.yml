@@ -7,6 +7,11 @@ chatgpt:
   max-tokens: ${MAX_TOKENS}
   temperature: ${TEMPERATURE}
   top-p: ${TOP_P}
+  image:
+    url: ${CHAT_GPT_IMAGE_URL}
+  multi:
+    url: ${CHAT_GPT_MULTICHAT_URL}
+    model: ${MULTICHAT_MODEL}
   security:
     user-name: ${GPT_USER_NAME}
     password: ${GPT_PASSWORD}

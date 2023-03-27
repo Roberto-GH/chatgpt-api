@@ -3,6 +3,7 @@ package com.rln.chatgptapi.controller;
 import com.rln.chatgptapi.dto.ChatRequest;
 import com.rln.chatgptapi.dto.ChatResponse;
 import com.rln.chatgptapi.dto.DefaultProperties;
+import com.rln.chatgptapi.exception.ChatgptException;
 import com.rln.chatgptapi.service.ChatgptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
@@ -40,9 +41,18 @@ public class HelloGptController implements InitializingBean {
   @PostMapping("/prompt")
   public ChatResponse prompt(@RequestBody ChatRequest chatRequest) {
     log.info(chatRequest.toString());
+    if (chatRequest.getPrompt().isEmpty()) {
+      throw new ChatgptException("Mensaje vacio :" + 400);
+    }
     ChatResponse chatResponse = chatGptService.sendChatRequest(chatRequest);
     log.info(chatResponse.toString());
     return chatResponse;
+  }
+
+  @GetMapping("/image")
+  public String image(@RequestParam String message) {
+    log.info(message);
+    return chatGptService.imageGenerate(message);
   }
 
 }
