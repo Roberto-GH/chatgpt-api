@@ -72,7 +72,7 @@ public class WebSecurityConfig {
     corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Origin", "Content-Type"));
     corsConfiguration.setExposedHeaders(Arrays.asList("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"));
     corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST"));
-    corsConfiguration.addAllowedOrigin("http://localhost:5173");
+    corsConfiguration.addAllowedOrigin(origin);
     corsConfiguration.setMaxAge(Duration.ZERO);
     corsConfiguration.setAllowCredentials(Boolean.TRUE);
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

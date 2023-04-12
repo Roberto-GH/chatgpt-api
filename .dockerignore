@@ -1,0 +1,14 @@
+.idea/
+*.iml
+*.iws
+target/
+.sonar/
+.sonarlint/
+.env
+.gradle/
+build/
+Dockerfile
+docker-compose.yaml
+HELP.md
+LICENSE
+README.md

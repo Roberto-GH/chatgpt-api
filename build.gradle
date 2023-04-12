@@ -8,6 +8,10 @@ tasks.named('compileJava') {
 	inputs.files(tasks.named('processResources'))
 }
 
+tasks.withType(Jar).configureEach {
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
 group = 'com.rln'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
