@@ -18,7 +18,7 @@
       "name": "chatgpt.model",
       "type": "java.lang.String",
       "sourceType": "com.rln.chatgptapi.property.ChatgptProperties",
-      "defaultValue": "text-davinci-003",
+      "defaultValue": "gpt-3.5-turbo-instruct",
       "description": "GPT-3 models can understand and generate natural language. We offer four main models with different levels of power suitable for different tasks. Davinci is the most capable model, and Ada is the fastest.."
     },
     {
@@ -46,7 +46,7 @@
       "name": "chatgpt.multi.model",
       "type": "java.lang.String",
       "sourceType": "io.github.flashvayne.chatgpt.property.MultiChatProperties",
-      "defaultValue": "gpt-3.5-turbo",
+      "defaultValue": "gpt-3.5-turbo-1106",
       "description": "ID of the model to use. See the model endpoint compatibility (https://platform.openai.com/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API."
     },
     {
